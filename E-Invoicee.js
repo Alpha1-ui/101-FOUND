@@ -1,5 +1,6 @@
 function sendOverdueReminder(rowNo) {
-  var spSheet = SpreadsheetApp.getActiveSpreadsheet();
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
+  var spSheet = SpreadsheetApp.openById(spreadsheetId);
   var invoiceSheet = spSheet.getSheetByName("E-Invoice");
   var priceSheet = spSheet.getSheetByName("Price_LookUp");
 

@@ -7,7 +7,9 @@ function onFormSubmit(e) {
   var interactionDate = new Date(formResponse[0]); // Timestamp is in the first column
 
   // Get the CRM sheet
-  var sheetCRM = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('CRM_AUTO');
+
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
+  var sheetCRM = SpreadsheetApp.openById(spreadsheetId).getSheetByName('CRM_AUTO');
   var crmData = sheetCRM.getDataRange().getValues();
 
   // Update the CRM sheet
@@ -27,23 +29,3 @@ function onFormSubmit(e) {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

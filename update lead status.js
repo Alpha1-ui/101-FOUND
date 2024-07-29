@@ -1,6 +1,8 @@
 function sendFollowUpEmails() {
   // Get the Leads_Data sheet
-  var sheetLeads = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Leads_Data');
+
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
+  var sheetLeads = SpreadsheetApp.openById(spreadsheetId).getSheetByName('Leads_Data');
   if (!sheetLeads) {
     Logger.log("Error: Unable to find 'Leads_Data' sheet.");
     return;
@@ -69,6 +71,3 @@ function sendFollowUpEmails() {
     }
   }
 }
-
-
-

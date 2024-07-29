@@ -1,6 +1,8 @@
 function checkOverdueInvoices() {
+
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
   var invoiceSheetName = 'E-Invoice'; // Name of the sheet where invoices are tracked
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById(spreadsheetId);
   var invoiceSheet = ss.getSheetByName(invoiceSheetName);
 
   if (!invoiceSheet) {
@@ -58,4 +60,3 @@ function createTimeDrivenTrigger() {
     .everyHours(1) // Adjust the frequency as needed
     .create();
 }
-

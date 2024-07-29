@@ -52,7 +52,8 @@ function onEditm(e) {
 function doGet(e) {
   var leadID = e.parameter.leadID;
   var status = e.parameter.status;
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Leads_Data');
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
+  var sheet = SpreadsheetApp.openById(spreadsheetId).getSheetByName('Leads_Data');
   var leadData = sheet.getDataRange().getValues();
 
   // Log received parameters
@@ -93,11 +94,3 @@ function setLeadID(sheet, row) {
     Logger.log("LeadID set to: " + (row - 1));
   }
 }
-
-
-
-
-
-
-
-

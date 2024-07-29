@@ -1,5 +1,6 @@
 function sendCombinedFollowUpReminders() {
-  var sheetCRM = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('CRM_AUTO');
+  var spreadsheetId = '1UlsuYn0Nvdl_RKVpkpmKs_PY48tmqI6MwPmGJWWqdIw';
+  var sheetCRM = SpreadsheetApp.openById(spreadsheetId).getSheetByName('CRM_AUTO');
   var crmData = sheetCRM.getDataRange().getValues();
   var currentDate = new Date();
   var formLinkTemplate = "https://docs.google.com/forms/d/e/1FAIpQLSekrLHuWv9B7PGoGa3oNeIFLN2cncho0joxEG80RMs41xSmYg/viewform?usp=pp_url&entry.1513145006={{CUSTOMER_ID}}&entry.489628463={{CUSTOMER_NAME}}&entry.1228162848={{CUSTOMER_EMAIL}}"; // Replace with your actual form link and entry IDs
